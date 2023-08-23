@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, useWindowDimensions, Button } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
+import { StyleSheet, Text, View, useWindowDimensions,TouchableOpacity } from 'react-native';
 
 export default function App() {
 
@@ -28,7 +27,16 @@ export default function App() {
     borderWidth: 2,
     borderColor: 'black',
     height: sizeButtonHeight,
+    // Sonra eklenen kısım:
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: sizeFont,
+    paddingTop: 10,
+    paddingLeft: 20,
+    paddingRight:20, 
+    paddingBottom:10
   };
+
   const textStyles = {fontSize: sizeFont,};
   return (
     <View style={styles.container}>
@@ -36,7 +44,7 @@ export default function App() {
       <Text style={textStyles}>Height: {window.height}</Text>
       <StatusBar style="auto" />
       <TouchableOpacity style={buttonStyles} >
-        <Text>Click</Text>
+        <Text style={textStyles}>Click</Text>
       </TouchableOpacity>
     </View>
   );
